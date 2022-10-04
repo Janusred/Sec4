@@ -23,9 +23,17 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
     //Aplica cache
     console.log('SW', event.request.url);
-
+});
+/*
     if (event.request.url.includes('https://reqres.in')) {
         const resp = new Response(`{  ok:false, mensaje: 'Janus' }`)
         event.respondWith(resp);
-    }
+    }*/
+
+    self.addEventListener('sync', event => {
+        console.log(' conexion Janus');
+        console.log(event);
+        console.log(event.tag);
+
+
 });
